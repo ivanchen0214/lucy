@@ -1,16 +1,16 @@
 import { MatchReader } from './MatchReader';
 import { CsvFileReader } from './CsvFileReader';
-import { MatchResult } from './MatchResult';
+import { ConsoleReports } from './reportTargets/ConsoleReports';
+import { HtmlReports } from './reportTargets/HtmlReports';
+import { WinAnalysis } from './analyzers/WinAnalysis';
+import { Summary } from './Summary';
 
-const csvFileReader = new CsvFileReader('football.csv');
-const reader = new MatchReader(csvFileReader);
-reader.load();
+// const csvFileReader = new CsvFileReader('football.csv');
+// const matchReader = new MatchReader(csvFileReader);
+const matchReader = MatchReader.fromCsv('football.csv');
+matchReader.load();
 
-console.log(reader.data);
-
-for (let match of reader.data) {
-  if (match[1] === 'Man United' && match[5] === 'H') {
-  }
-  else if (match[2] === 'Man United' && match[5] === 'A') {
-  }
-}
+// const summary = new Summary(new WinAnalysis('Man United'), new HtmlReports());
+// summary.buildAndPrintReport(matchReader.data);
+const summary = Summary.winsAnalysisWithHtml('Man United');
+summary.buildAndPrintReport(matchReader.data);
