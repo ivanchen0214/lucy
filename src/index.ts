@@ -1,1 +1,1 @@
-console.log("asdf");
+import { User } from './models/User';
