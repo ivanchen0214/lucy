@@ -5,5 +5,7 @@ export interface Prop {
 }
 
 export interface Capability {
+  setIdentifier: (identifier: string) => void;
+  setName: (name: string) => void;
   togglePower: (status: boolean) => void;
 }

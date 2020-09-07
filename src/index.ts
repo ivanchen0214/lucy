@@ -6,5 +6,4 @@ const machine = new Machine({
   powerStatus: false
 });
 
-machine.set('identifier', 'P20200908');
 console.log(machine.get('identifier'));
