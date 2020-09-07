@@ -1,6 +1,6 @@
-import { Prop, Capability } from '../Interfaces/Machine';
+import { MachineProp, MachineCapability } from '../Interfaces/Machine';
 
-export class Machine<T extends Prop> implements Capability {
+export class Machine<T extends MachineProp> implements MachineCapability {
   constructor(public prop: T) { }
 
   get = <K extends keyof T>(propName: string): T[K] => {
