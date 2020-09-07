@@ -1,9 +1,9 @@
-import { Machine } from './Classes/Machine';
+import { Printer } from './Classes/Printer';
 
-const machine = new Machine({
-  identifier: 'P20200907',
+const printer = new Printer({
+  identifier: 'P2020',
   name: 'Printer',
   powerStatus: false
 });
 
-console.log(machine.get('identifier'));
+console.log(printer.getAllProp());

@@ -1,4 +1,5 @@
 import { Prop, Capability } from '../Interfaces/Machine';
+
 export class Machine<T extends Prop> implements Capability {
   constructor(public prop: T) { }
 
@@ -10,6 +11,10 @@ export class Machine<T extends Prop> implements Capability {
   //   this.prop[propName] = value;
   // }
 
+  getAllProp(): T {
+    return this.prop;
+  }
+
   setIdentifier(setIdentifier: string): void {
     this.prop.identifier = setIdentifier;
   }
@@ -18,7 +23,7 @@ export class Machine<T extends Prop> implements Capability {
     this.prop.name = name;
   }
 
-  togglePower(status: boolean): void {
-    this.prop.powerStatus = status;
+  togglePower(): void {
+    this.prop.powerStatus = !this.prop.powerStatus;
   }
 }
