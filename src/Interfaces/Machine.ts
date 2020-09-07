@@ -5,4 +5,5 @@ export interface Prop {
 }
 
 export interface Capability {
+  togglePower: (status: boolean) => void;
 }
