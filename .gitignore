@@ -1,6 +1,7 @@
 node_modules/**/*
-.expo/*
-.dist/*
+build/*
+expo/*
+dist/*
 .catce/*
 npm-debug.*
 *.jks
