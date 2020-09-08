@@ -1,10 +1,11 @@
-import { User } from './models/User';
-import { UserForm } from './views/UserForm';
+import { UserEdit } from './views/UserEdit';
+import { User, UserProp } from './models/User';
 
 const user = User.buildUser({ name: "Default name", age: 10 });
 const root = document.getElementById('root');
 
 if (root) {
-  const userForm = new UserForm(document.getElementById('root'), user);
-  userForm.render();
+  const userEdit = new UserEdit(root, user);
+  userEdit.render();
+  console.log(userEdit);
 }
