@@ -1,12 +1,19 @@
 {
- "scripts": {
-    "start:db": "json-server -w db.json",
-    "start:parcel": "parcel index.html"
+  "name": "lucy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "typescript": "^4.0.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanchen0214/lucy.git"
   },
-  "dependencies": {
-    "axios": "^0.20.0"
-  }
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanchen0214/lucy/issues"
+  },
+  "homepage": "https://github.com/ivanchen0214/lucy#readme"
 }
