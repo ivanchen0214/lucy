@@ -1,4 +1,8 @@
-export interface MachineProp {
+export type PropType = {
+  [key: string]: any;
+}
+
+export interface MachineProp extends PropType {
   identifier?: string;
   name?: string;
   powerStatus?: boolean;
