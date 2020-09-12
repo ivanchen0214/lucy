@@ -10,7 +10,7 @@ interface RouterHandlerDescriptor extends PropertyDescriptor {
 function routerBinder(method: string) {
   return function (path: string) {
     return function (
-      arget: any,
+      target: any,
       key: string,
       desc: RouterHandlerDescriptor
     ) {
