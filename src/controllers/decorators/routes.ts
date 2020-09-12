@@ -1,18 +1,27 @@
 import 'reflect-metadata';
-import { router } from '../../routes/LoginRoutes';
+import { RequestHandler } from 'express';
+import { MetadataKeys } from './MetadataKeys';
+import { Methods } from './Methods';
+
+interface RouterHandlerDescriptor extends PropertyDescriptor {
+  value?: RequestHandler;
+}
 
 function routerBinder(method: string) {
   return function (path: string) {
-    return function (target: any, key: string, desc: PropertyDescriptor) {
-      console.log(2, path, method);
-      Reflect.defineMetadata('path', path, target, key);
-      Reflect.defineMetadata('method', method, target, key);
+    return function (
+      arget: any,
+      key: string,
+      desc: RouterHandlerDescriptor
+    ) {
+      Reflect.defineMetadata(MetadataKeys.path, path, target, key);
+      Reflect.defineMetadata(MetadataKeys.method, method, target, key);
     }
   }
 }
 
-export const get = routerBinder('get');
-export const put = routerBinder('put');
-export const post = routerBinder('post');
-export const del = routerBinder('del');
-export const patch = routerBinder('patch');
+export const get = routerBinder(Methods.get);
+export const put = routerBinder(Methods.put);
+export const post = routerBinder(Methods.post);
+export const del = routerBinder(Methods.delete);
+export const patch = routerBinder(Methods.put);
