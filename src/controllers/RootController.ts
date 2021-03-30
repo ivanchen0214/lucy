@@ -15,7 +15,6 @@ function requireAuth(req: Request, res: Response, next: NextFunction) {
 class RootController {
   @get('/')
   getRoot(req: Request, res: Response) {
-    console.log(req.session);
     if (req.session && req.session.loggedIn) {
       res.send(`
         <div>

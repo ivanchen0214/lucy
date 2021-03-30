@@ -12,6 +12,6 @@ app.use(bodyParser({ extended: true }));
 app.use(cookieSession({ keys: ["asdfadsf"] }));
 app.use(AppRouter.getInstance());
 
-app.listen(3000, () => {
-  console.log('Listening on port 3000');
+app.listen(8080, () => {
+  console.log('Listening on port 8080');
 });
